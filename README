@@ -1,0 +1,102 @@
+Model from Greenstein JL, Hinch R and Winslow RL. Mechanisms of excitation-contraction coupling in an integrative model of the cardiac ventricular myocyte. Biophysical Journal. 2006;90:77-91.
+
+C++ compilation instructions:
+
+Compile:
+>> cd /path/to/model/c/
+>> g++ -I~/cvodes-install/include/ main.cpp fcn_40state.cpp -L/home/mwalker/cvodes-install/lib -lsundials_cvodes -lsundials_nvecserial -o main
+
+Run:
+>> ./main <states_out_file> <fluxes_out_file> <parameters_file>
+for example,
+>> ./main states.txt fluxes.txt params.txt
+
+Parameter file: Used as input to the model program containing the simulation parameters.
+
+States file: Tab-delimited text containing time series of all 78 states. Column headers are:
+
+Time
+STATE_1
+STATE_2
+STATE_3
+STATE_4
+STATE_5
+STATE_6
+STATE_7
+STATE_8
+STATE_9
+STATE_10
+STATE_11
+STATE_12
+STATE_13
+STATE_14
+STATE_15
+STATE_16
+STATE_17
+STATE_18
+STATE_19
+STATE_20
+STATE_21
+STATE_22
+STATE_23
+STATE_24
+STATE_25
+STATE_26
+STATE_27
+STATE_28
+STATE_29
+STATE_30
+STATE_31
+STATE_32
+STATE_33
+STATE_34
+STATE_35
+STATE_36
+STATE_37
+STATE_38
+STATE_39
+STATE_40
+V
+mNa
+hNa
+jNa
+Nai
+Ki
+Cai
+CaSR
+LTRPNCa
+HTRPNCa
+xKs
+C0Kv43
+C1Kv43
+C2Kv43
+C3Kv43
+OKv43
+CI0Kv43
+CI1Kv43
+CI2Kv43
+CI3Kv43
+OIKv43
+C0Kv14
+C1Kv14
+C2Kv14
+C3Kv14
+OKv14
+CI0Kv14
+CI1Kv14
+CI2Kv14
+CI3Kv14
+OIKv14
+C1Herg
+C2Herg
+C3Herg
+OHerg
+IHerg
+
+fluxes: Tab-delimited text containing time series of Ca2+ fluxes and states. Column headers are:
+
+Time
+ICaL
+JCaL
+JRyR
+CaSSavg
