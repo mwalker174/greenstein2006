@@ -1,10 +1,10 @@
 Model from Greenstein JL, Hinch R and Winslow RL. Mechanisms of excitation-contraction coupling in an integrative model of the cardiac ventricular myocyte. Biophysical Journal. 2006;90:77-91.
 
-C++ compilation instructions:
+C++ compilation instructions (requires SUNDIALS library):
 
 Compile:
 >> cd /path/to/model/c/
->> g++ -I~/cvodes-install/include/ main.cpp fcn_40state.cpp -L/home/mwalker/cvodes-install/lib -lsundials_cvodes -lsundials_nvecserial -o main
+>> g++ -I~/cvodes-install/include/ main.cpp fcn_40state.cpp -L~/cvodes-install/lib -lsundials_cvodes -lsundials_nvecserial -o main
 
 Run:
 >> ./main <states_out_file> <fluxes_out_file> <parameters_file>
